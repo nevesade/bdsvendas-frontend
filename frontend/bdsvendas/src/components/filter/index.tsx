@@ -2,12 +2,18 @@
 
 import './styles.css';
 import { useEffect, useState } from 'react';
-import { Store } from '../../types';
+import { FilterData, Store } from '../../types';
 import { makeRequest } from '../../request';
-import ReactSelect from 'react-select';
+import Select from 'react-select';
 
-function Filter() {
+
+type Props = {
+  onFilterChange: (filter: FilterData) => void;
+};
+
+function Filter({ onFilterChange }: Props) {
   const [selectStore, setSelectStore] = useState<Store[]>([]);
+
 
 
   useEffect(() => {
@@ -20,15 +26,26 @@ function Filter() {
     });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
+
+
+
   }, []);
+
+
+
+
+
   return (
     <>
       <div className="filter-container base-card ">
         <div className="filter-store mb-4">
 
-          <ReactSelect
+          <Select
+
+
             name="store"
             options={selectStore}
+            onChange={(event) => onFilterChange({ storeId: event?.id })}
             classNamePrefix="filter-store-select"
             isClearable
             placeholder="Selecione a loja"
@@ -37,8 +54,11 @@ function Filter() {
             formatOptionLabel={(store) =>
               <span>{store.name}</span>
             }
-            />
+          />
+
+
         </div>
+
 
       </div>
     </>

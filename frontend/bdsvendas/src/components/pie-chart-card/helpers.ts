@@ -1,8 +1,19 @@
 import { ApexOptions } from 'apexcharts';
+import { Gender } from '../../types';
 
-export const buildPieChartConfig = (labels: string[] = [], name: string) => {
+export const buildPieChartConfig = (labels: string[] = []) => {
+  const formatGender = (gender: Gender) => {
+    const GenderInPT = {
+      MALE: 'Masculino',
+      FEMALE: 'Feminino',
+      OTHER: 'Outro'
+    };
+
+    return GenderInPT[gender];
+  };
+
   return {
-    labels,
+    labels: labels.map((g) => formatGender(g as Gender)),
     noData: {
       text: 'Sem resultados',
       align: 'center',
@@ -12,7 +23,7 @@ export const buildPieChartConfig = (labels: string[] = [], name: string) => {
       style: {
         color: '#3e82f7',
         fontSize: '18px',
-        fontFamily: 'Roboto, sans-serif'
+        fontFamily: 'Ubuntu, sans-serif'
       }
     },
     colors: ['#FF7A00', '#7234F5', '#FF0000'],
@@ -22,38 +33,38 @@ export const buildPieChartConfig = (labels: string[] = [], name: string) => {
       position: 'bottom',
       offsetY: 0,
       labels: {
-        colors: ['#b4bed2']
+        colors: ['#8D8D8D', '#8D8D8D', '#8D8D8D']
       },
       fontFamily: 'Roboto, sans-serif',
       fontSize: '18px',
       itemMargin: {
-        // horizontal: 5,
-        vertical: 9
+        // horizontal: 15,
+        vertical: 5
       }
     },
     dataLabels: {
-      enabled: false
+      enabled: true
     },
     plotOptions: {
       pie: {
         size: 400,
         donut: {
-          size: '80%',
+          size: '65%',
           labels: {
             show: true,
             name: {
               show: true,
               offsetY: 10,
               formatter: function () {
-                return name;
+                return '';
               }
             },
             total: {
               show: true,
               showAlways: true,
-              fontSize: '24px',
+              fontSize: '30px',
               color: '#ABB1C0',
-              fontFamily: 'Roboto, sans-serif',
+              fontFamily: 'Ubuntu, sans-serif',
               formatter: function () {
                 return '';
               }
@@ -65,5 +76,5 @@ export const buildPieChartConfig = (labels: string[] = [], name: string) => {
     chart: {
       height: '400px'
     }
-  } as ApexOptions;
+  } as unknown as ApexOptions;
 };

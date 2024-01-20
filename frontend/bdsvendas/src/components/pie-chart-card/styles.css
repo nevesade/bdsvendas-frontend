@@ -16,9 +16,10 @@
 .sales-quantity {
   margin-top: 180px;
   color: var(--secondary-color);
+  font-size: 36px;
 }
 
 .sales-quantity-label {
   color: #8D8D8D;
-  
+  font-size: 18px;
 }
