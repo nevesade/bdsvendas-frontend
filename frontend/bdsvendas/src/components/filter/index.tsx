@@ -24,11 +24,14 @@ function Filter() {
   return (
     <>
       <div className="filter-container base-card ">
-        <div className=" mb-4">
-       
+        <div className="filter-store mb-4">
+
           <ReactSelect
             name="store"
             options={selectStore}
+            classNamePrefix="filter-store-select"
+            isClearable
+            placeholder="Selecione a loja"
             getOptionLabel={(option: Store) => option.name}
             getOptionValue={(option: Store) => String(option.id)}
             formatOptionLabel={(store) =>

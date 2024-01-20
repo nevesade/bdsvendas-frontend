@@ -4,5 +4,57 @@
   height: 130px;
   display: flex;
   align-items: center;
-  padding-left: 40px;
+}
+
+
+
+.filter-store-select__control  {
+  height: 50px;
+  width: 270px;
+}
+
+.filter-store-select__indicator-separator {
+  display: none !important;
+}
+
+
+@media (min-width: 320px) {
+  .app-container {
+    padding: 0 10px;
+  }
+
+  .filter-container {
+    /* border: 1px solid red; */
+    padding: 15px;
+  }
+
+
+}
+
+@media (min-width: 576px) {
+  .app-container {
+    padding: 0 40px;
+  }
+
+
+  .filter-store {
+    /* border: 1px solid green; */
+    padding-left: 40px;
+  }
+
+
+}
+
+
+@media (min-width: 768px) {
+  .app-container {
+    padding: 0 40px;
+  }
+
+
+  .filter-store {
+    /* border: 1px solid green; */
+    width: 270px;
+    padding-left: 40px;
+  }
 }
