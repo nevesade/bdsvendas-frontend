@@ -14,7 +14,7 @@
 }
 
 .sales-quantity {
-  margin-top: 180px;
+
   color: var(--secondary-color);
   font-size: 36px;
 }
@@ -22,4 +22,34 @@
 .sales-quantity-label {
   color: #8D8D8D;
   font-size: 18px;
+}
+
+
+
+@media (min-width:320px) {
+  .sales-overview-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .sales-container {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    /* border: 1px solid red; */
+  }
+
+}
+
+
+@media (min-width: 992px) {
+  .sales-overview-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding:  50px  40px;
+    margin-bottom: 40px;
+  }
+
 }

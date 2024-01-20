@@ -6,4 +6,5 @@
   display: flex;
   align-items: center;
   background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
