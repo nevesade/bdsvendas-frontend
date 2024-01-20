@@ -1,7 +1,7 @@
 import './styles.css';
 import { buildPieChartConfig } from './helpers';
 import ReactApexChart from 'react-apexcharts';
-import { formatPrice } from '../../formatters';
+import { formatPrice } from '../../utils/formatters';
 
 type Props = {
   labels?: string[];

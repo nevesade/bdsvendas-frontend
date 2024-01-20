@@ -4,7 +4,7 @@ import Filter from './components/filter';
 import Header from './components/header';
 import PieChartCard from './components/pie-chart-card';
 import { FilterData, PieChartConfig, SalesByStore, SalesSummary } from './types';
-import { makeRequest } from './request';
+import { makeRequest } from './utils/request';
 import { buildSalesByStoreChart } from './helpers';
 
 function App() {

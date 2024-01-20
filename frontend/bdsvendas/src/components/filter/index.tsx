@@ -3,7 +3,7 @@
 import './styles.css';
 import { useEffect, useState } from 'react';
 import { FilterData, Store } from '../../types';
-import { makeRequest } from '../../request';
+import { makeRequest } from '../../utils/request';
 import Select from 'react-select';
 
 
